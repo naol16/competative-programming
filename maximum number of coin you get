@@ -1,0 +1,17 @@
+class Solution(object):
+    def maxCoins(self, piles):
+        """
+        :type piles: List[int]
+        :rtype: int
+        """
+        
+        piles.sort()
+        a=len(piles)-2
+        new=0
+        num=0
+
+        while(num<len(piles)//3):
+             new+=piles[a]
+             a=a-2
+             num+=1
+        return(new)
