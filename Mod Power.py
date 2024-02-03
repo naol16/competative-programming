@@ -1,0 +1,7 @@
+a=int(input())
+b=int(input())
+c=int(input())
+e=int(pow(a,b))
+f=int(pow(a,b,c))
+print(e)
+print(f)
