@@ -6,14 +6,15 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        ans = 0
-        def solve(node,current):
-            nonlocal ans
-            if node==None:
-                ans = max(ans,current)
-                return
-            solve(node.left,current+1)
-            solve(node.right,current+1)
-        solve(root,0)
-        return ans
+        max_depth=0
+        def  finding_depth(root,current):
+             nonlocal max_depth
+             max_depth=max(max_depth,current)
+             if not root:
+                return 
+             finding_depth(root.left,current+1)
+             finding_depth(root.right,current+1)
+        finding_depth(root,0)
+        return max_depth
+             
         
