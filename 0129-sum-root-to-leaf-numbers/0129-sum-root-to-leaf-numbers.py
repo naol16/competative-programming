@@ -10,8 +10,7 @@ class Solution:
         totalsum=0
         def preorder(node,currentpath):
               nonlocal totalsum,newlist
-              if not node:
-                 return
+              
              
               currentpath+=str(node.val)
               if not node.left and not node.right:
