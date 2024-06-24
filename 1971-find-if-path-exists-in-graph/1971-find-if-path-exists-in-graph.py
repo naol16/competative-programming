@@ -5,14 +5,17 @@ class Solution:
         for i,j in edges:
             dictionary[i].append(j)
             dictionary[j].append(i)
-        visted=set()
-        def dfs(source):
-            if source==destination:
-               return True
-            visted.add(source)
-            for  i in dictionary[source]:
-                 if  i not in visted and dfs(i):
-                    return True
-            return False
-        return dfs(source)
-                 
+        stack=[source]
+        visted=set([source])
+        
+        while stack:
+              element=stack.pop()
+              if element==destination:
+                 return True
+              for i in dictionary[element]:
+                  if i not in visted:
+                     stack.append(i)
+                     visted.add(i)
+        return False
+                
+            
