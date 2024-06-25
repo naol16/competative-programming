@@ -11,18 +11,18 @@ class Solution:
         if not root:
             return []
         answer = []
-        que = deque([root])
+        qeue = deque([root])
         
-        while que:
-            length = len(que)
+        while qeue:
+            length = len(qeue)
             temp = []
             for i in range(length):
-                node = que.pop()
-                temp.append(node.val)
-                if node.left:
-                    que.appendleft(node.left)
-                if node.right:
-                    que.appendleft(node.right)
+                value = qeue.pop()
+                temp.append(value.val)
+                if value.left:
+                    qeue.appendleft(value.left)
+                if value.right:
+                    qeue.appendleft(value.right)
             answer.append(temp)
         return answer
 
