@@ -1,0 +1,8 @@
+  def missingNumber(self, nums: List[int]) -> int:
+        new_array=0
+        array=0
+        for i in range(len(nums)+1):
+            new_array^=i
+        for i in nums:
+            array^=i
+        return array^new_array
