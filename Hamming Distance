@@ -1,0 +1,3 @@
+  num=x^y
+        answer=bin(num).count('1')
+        return answer
